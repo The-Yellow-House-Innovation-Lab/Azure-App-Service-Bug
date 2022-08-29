@@ -1,0 +1,32 @@
+{
+  "name": "cilia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://gitlab.com/EliasTouil/cilia.git",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^12.1.6",
+    "@types/jest": "28.1.4",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "8.0.1",
+    "jest": "28.1.2",
+    "prettier": "2.6.2",
+    "ts-jest": "28.0.4",
+    "typescript": "4.7.3"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "test": "jest",
+    "format-frontend": "npx prettier --config .prettierrc 'frontend/src' --write",
+    "format-backend": "npx prettier --config .prettierrc 'backend/src' --write",
+    "format": "yarn run format-frontend && yarn run format-backend && git add .",
+    "lint-backend": "npx eslint backend/src --fix",
+    "lint-frontend": "npx eslint 'frontend/src/**/*.{ts,tsx}' --fix",
+    "lint": "yarn run lint-backend && yarn run lint-frontend"
+  },
+  "dependencies": {}
+}
